@@ -1,0 +1,19 @@
+<div class="gifListContainer">
+  <div class="searchBar">
+    <input
+      value="{{ searchText }}"
+      type="text"
+      class=""
+      placeholder="Search GIF's..."
+      [(ngModel)]="searchTerm"
+    />
+    <button (click)="display()">Search</button>
+  </div>
+  <div class="gifList">
+    <app-gif-card
+      *ngFor="let gif of data"
+      [src]="gif.images.original.url"
+      [title]="gif.title"
+    ></app-gif-card>
+  </div>
+</div>
